@@ -1,0 +1,80 @@
+@import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+  font-family: Lato, sans-serif;
+}
+
+// specific
+
+.about {
+  width: 830px;
+  margin: auto;
+  margin-top: 2em;
+
+  &__header {
+    margin-bottom: 6em;
+  }
+}
+
+// reusable
+
+.header {
+  &__title {
+    font-size: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.3em;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 2em;
+      border-bottom: 1px solid;
+      margin: 1em auto 1em auto;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
+
+.row {
+  display: flex;
+
+  > .col {
+    flex: 1;
+  }
+
+  > .col + .col {
+    margin-left: 0.3em;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    height: 92px;
+    border: 2px solid #f1f1f1;
+    border-radius: 50%;
+    margin-bottom: 3em;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 2em;
+  }
+
+  &__text {
+  }
+}

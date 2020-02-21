@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300, 400, 700, 900');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Lato;
+}
+
+.about {
+  &__body {
+    max-width: 823px;
+    margin: auto;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 65px;
+  }
+
+  &__row {
+    display: flex;
+    margin: 0 -15px;
+  }
+
+  &__column {
+    flex: 0 0 33.333%;
+    padding: 0 15px;
+  }
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 8.95px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 30px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #000;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+  }
+}
+
+.item-about {
+  &__icon {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    border: 2px solid #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 35px;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3.52px;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
