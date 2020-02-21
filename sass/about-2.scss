@@ -1,5 +1,5 @@
-@import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+// @import url('https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css');
+// @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 body {
   font-family: Lato, sans-serif;
@@ -8,9 +8,10 @@ body {
 // specific
 
 .about {
-  width: 830px;
+  max-width: 830px;
   margin: auto;
   margin-top: 2em;
+  padding: 2em;
 
   &__header {
     margin-bottom: 6em;
@@ -50,6 +51,14 @@ body {
 
   > .col + .col {
     margin-left: 0.3em;
+  }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+
+    > .col + .col {
+      margin-top: 3em;
+    }
   }
 }
 
