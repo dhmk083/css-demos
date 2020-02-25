@@ -280,6 +280,78 @@ body {
   }
 }
 
+.welcome {
+  padding: 3em 0;
+  background: $color-4;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+
+  .wrap {
+    display: flex;
+  }
+
+  &__video {
+    flex: 1;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: start;
+  }
+
+  &__title {
+    color: $color-1;
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+
+  &__text {
+  }
+}
+
+.reviews {
+  padding: 3em 0;
+
+  &__title {
+    text-align: center;
+    color: $color-1;
+  }
+
+  &__list {
+    display: flex;
+  }
+}
+
+.review {
+  @include col;
+  flex: 1;
+
+  &__text {
+    $color: $color-4;
+
+    padding: 1em;
+    background: $color;
+    border: 1px solid darken($color, 20%);
+    border-radius: 3px;
+    margin-bottom: 0.8em;
+  }
+
+  &__author {
+    text-align: right;
+    color: $color-1;
+
+    &:before {
+      content: '—';
+      margin-right: 0.3em;
+    }
+  }
+}
+
 .footer {
   background: $color-1;
   color: $color-2;
