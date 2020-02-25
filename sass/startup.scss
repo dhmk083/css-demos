@@ -1,0 +1,215 @@
+$color-1: #3084bf;
+$color-2: #ffffff;
+$color-3: #00c4a1;
+$color-4: #ebf5fc;
+
+$fa-font-path: '../assets/webfonts';
+
+@import './fa/fontawesome.scss';
+@import './fa/solid.scss';
+@import './fa/brands.scss';
+
+@mixin fa-icon($name, $type) {
+  @extend %fa-icon;
+  @if ($type == brand) {
+    @extend .fab;
+  } @else if ($type == solid) {
+    @extend .fas;
+  }
+
+  &:before {
+    content: fa-content($name);
+  }
+}
+
+@mixin fab($name) {
+  @include fa-icon($name, brand);
+}
+
+@mixin fas($name) {
+  @include fa-icon($name, solid);
+}
+
+@function get-last-sel($sel: &) {
+  @return nth(nth($sel, 1), -1);
+}
+
+@mixin row($align: center, $justify: initial, $gap: 1em) {
+  display: flex;
+
+  @if ($align) {
+    align-items: $align;
+  }
+  @if ($justify) {
+    justify-content: $justify;
+  }
+  @if ($gap) {
+    $sel: get-last-sel();
+
+    & + #{$sel} {
+      margin-top: $gap;
+    }
+  }
+}
+
+@mixin col($gap: 1em) {
+  $sel: get-last-sel();
+
+  & + #{$sel} {
+    margin-left: $gap;
+    @content;
+  }
+}
+
+@mixin flex($align: null, $justify: null, $wrap: null) {
+  display: flex;
+  @if ($align) {
+    align-items: $align;
+  }
+  @if ($justify) {
+    justify-content: $justify;
+  }
+  @if ($wrap) {
+    flex-wrap: $wrap;
+  }
+}
+
+@mixin flex-col($align: null, $justify: null, $wrap: null) {
+  @include flex($align, $justify, $wrap);
+  flex-direction: column;
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.wrap {
+  width: 960px;
+  margin: auto;
+}
+
+.header {
+  background: $color-2;
+  color: $color-1;
+
+  .wrap {
+    @include flex($align: center, $justify: space-between);
+  }
+}
+
+.brand {
+  @include row;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1.5em;
+
+  &__logo {
+    width: 32px;
+    height: 32px;
+    border: 6px solid $color-1;
+    margin-right: 1em;
+  }
+
+  &__title-1 {
+    font-weight: 700;
+    margin-right: 0.2em;
+  }
+
+  &__title-2 {
+    color: #aaa;
+  }
+}
+
+.nav {
+  @include row($align: stretch);
+
+  $border: 0.3em;
+  $color-hover: tomato;
+
+  &__item {
+    position: relative;
+    border-bottom: $border solid transparent;
+
+    &:hover {
+      border-color: $color-hover;
+
+      .nav__sub {
+        visibility: visible;
+      }
+    }
+
+    &--active {
+      border-color: $color-3;
+    }
+  }
+
+  &__link {
+    padding: 2em 0.5em;
+    text-decoration: none;
+    display: inline-block;
+    color: $color-1;
+  }
+
+  &__sub-icon {
+    @include fas($fa-var-caret-down);
+    margin-left: -0.5em;
+  }
+
+  &__sub {
+    visibility: hidden;
+    position: absolute;
+    top: calc(100% + #{$border});
+    min-width: 100%;
+    background: $color-2;
+    color: $color-1;
+    border: 1px solid;
+    border-top: none;
+  }
+
+  &__subitem {
+    border-bottom: $border solid transparent;
+
+    &:hover {
+      border-color: $color-hover;
+    }
+  }
+}
+
+.footer {
+  background: $color-1;
+  color: $color-2;
+
+  .wrap {
+    @include flex($align: center, $justify: space-between);
+    padding: 1em;
+  }
+}
+
+.twitter {
+  @include fab($fa-var-twitter);
+}
+
+.facebook {
+  @include fab($fa-var-facebook);
+}
+
+.google-plus {
+  @include fab($fa-var-google-plus);
+}
+
+.media {
+  @include row;
+  color: $color-1;
+  font-size: 2em;
+
+  .icon {
+    @include col;
+    background: $color-2;
+    border-radius: 5px;
+    padding: 0.2em;
+  }
+}
