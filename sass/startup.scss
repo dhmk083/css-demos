@@ -230,6 +230,56 @@ body {
   color: $color-2;
 }
 
+.benefits {
+  padding: 3em 0;
+
+  &__list {
+    display: flex;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  &__header {
+    display: flex;
+    color: $color-1;
+  }
+
+  &__icon {
+    margin-right: 1em;
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__content {
+    flex: 1;
+    padding: 1em 0;
+  }
+
+  &__footer {
+    text-align: right;
+  }
+
+  &__link {
+    color: $color-3;
+    text-decoration: none;
+
+    &:after {
+      content: '→';
+    }
+
+    &:hover {
+      text-decoration: underline;
+      color: lighten($color-3, 5%);
+    }
+  }
+}
+
 .footer {
   background: $color-1;
   color: $color-2;
@@ -255,10 +305,10 @@ body {
 .media {
   @include row;
   color: $color-1;
-  font-size: 2em;
+  font-size: 1em;
 
   .icon {
-    @include col;
+    @include col(0.5em);
     background: $color-2;
     border-radius: 5px;
     padding: 0.2em;
