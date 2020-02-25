@@ -79,6 +79,18 @@ $fa-font-path: '../assets/webfonts';
   flex-direction: column;
 }
 
+@mixin button-states($bg) {
+  background-color: $bg;
+
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+
+  &:active {
+    background-color: darken($bg, 20%);
+  }
+}
+
 html {
   font-family: sans-serif;
 }
@@ -177,6 +189,45 @@ body {
       border-color: $color-hover;
     }
   }
+}
+
+.promo {
+  background: $color-1;
+  color: $color-2;
+  padding: 3em 0;
+
+  .wrap {
+    @include flex-col($align: center);
+  }
+
+  &__title {
+    text-transform: capitalize;
+  }
+
+  &__text {
+  }
+
+  &__actions {
+    display: flex;
+
+    button {
+      @include col;
+    }
+  }
+}
+
+.button {
+  @include button-states(white);
+  color: black;
+  padding: 1em 2em;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.button--primary {
+  @include button-states($color-3);
+  color: $color-2;
 }
 
 .footer {
