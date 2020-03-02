@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  background: white;
 }
 
 #delivery-form {
@@ -80,14 +81,6 @@ form {
 .margin-center {
   margin-left: auto;
   margin-right: auto;
-}
-
-@function if($cond, $true, $false: null) {
-  @if ($cond) {
-    @return $true;
-  } @else {
-    @return $false;
-  }
 }
 
 @mixin media-width($min, $max: null) {

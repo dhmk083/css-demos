@@ -21,7 +21,7 @@ function makeForm({ form, fields, validate, submit }) {
 
     if (!fieldInfo.container) {
       let el = form.elements[name]
-      if (el instanceof NodeList) {
+      if (!((el instanceof Element) /*ie11*/)) {
         el = el[0]
       }
 
