@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#delivery-form {
+  max-width: 960px;
+  margin: auto;
+  padding: 1em;
+  font-family: sans-serif;
+
+  .delivery-type {
+    display: flex;
+    align-items: center;
+  }
+
+  .attachment {
+    display: flex;
+    align-items: center;
+
+    &__icon {
+      border-radius: 50%;
+      box-shadow: 4px 3px 7px 0px rgba(0, 0, 0, 0.5);
+      padding: 0.5em;
+    }
+  }
+
+  input[type='file'] {
+    display: none;
+  }
+}
+
+form {
+  $color-1: #ffea5d;
+
+  .field {
+    input:not([type='radio']):not([type='checkbox']) {
+      width: 100%;
+      padding: 1em;
+      border-radius: 4px;
+      border: 1px solid darken($color-1, 40%);
+    }
+
+    &--invalid {
+      input {
+        border-color: red;
+      }
+    }
+
+    &__error {
+      color: red;
+      margin-top: 0.5em;
+    }
+  }
+
+  input[type='submit'] {
+    padding: 1em;
+    border-radius: 4px;
+    border: none;
+    font-family: serif;
+    font-weight: 700;
+    font-size: 1.2em;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    background: $color-1;
+
+    &:disabled {
+      background: lighten($color-1, 10%);
+      color: #aaa;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@function if($cond, $true, $false: null) {
+  @if ($cond) {
+    @return $true;
+  } @else {
+    @return $false;
+  }
+}
+
+@mixin media-width($min, $max: null) {
+  @if ($min and not $max) {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else if (not $min and $max) {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else if ($min and $max) {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+$break-xs: 0;
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+$break-xl: 1200px;
+
+$breaks: (
+  null: null,
+  sm: $break-sm,
+  md: $break-md,
+  lg: $break-lg,
+  xl: $break-xl,
+);
+
+$gutter: 0.5em;
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$gutter;
+  margin-right: -$gutter;
+
+  & > [class*='cell'] {
+    margin-bottom: 2 * $gutter;
+  }
+}
+
+.cell-break {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+%cell {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 auto;
+  padding-left: $gutter;
+  padding-right: $gutter;
+}
+
+@function col-name($size, $i, $allow_0: false) {
+  $pre: if($size, '-#{$size}', '');
+  $num: if($i > 0 or $allow_0, '-#{$i}', '');
+  @return '#{$pre}#{$num}';
+}
+
+@each $size-name, $size-value in $breaks {
+  @for $i from 0 through 12 {
+    $name: col-name($size-name, $i);
+
+    .cell#{$name} {
+      @extend %cell;
+    }
+  }
+
+  @include media-width($size-value) {
+    @for $i from 0 through 12 {
+      $name: col-name($size-name, $i);
+
+      .cell#{$name} {
+        @if ($i > 0) {
+          flex-basis: percentage($i / 12);
+          max-width: percentage($i / 12);
+        } @else {
+          flex-grow: 1;
+          flex-basis: auto;
+          width: auto;
+          min-width: 0;
+          max-width: 100%;
+        }
+      }
+
+      $offset-name: col-name($size-name, $i, true);
+
+      @if ($size-name or $i) {
+        .offset#{$offset-name} {
+          margin-left: percentage($i / 12);
+        }
+      }
+    }
+  }
+}
