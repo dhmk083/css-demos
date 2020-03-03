@@ -82,14 +82,6 @@ form {
   margin-right: auto;
 }
 
-@function if($cond, $true, $false: null) {
-  @if ($cond) {
-    @return $true;
-  } @else {
-    @return $false;
-  }
-}
-
 @mixin media-width($min, $max: null) {
   @if ($min and not $max) {
     @media (min-width: $min) {
