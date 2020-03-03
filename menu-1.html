@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/dist/menu-1.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="brand">My Company</div>
+
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="menu">
+        <div class="menu__item">Home</div>
+        <div class="menu__item">About</div>
+        <div class="menu__item">Contact</div>
+        <div class="menu__item">Blog</div>
+      </div>
+    </header>
+
+    <main>
+      Main content
+    </main>
+
+    <script>
+      const opened = 'menu--opened'
+      const opening = 'menu--opening'
+      const menu = document.querySelector('.menu')
+
+      menu.addEventListener('transitionend', () =>
+        menu.classList.remove(opening)
+      )
+
+      document.querySelector('.hamburger').addEventListener('click', () => {
+        menu.classList.add(opening)
+        menu.classList.toggle(opened)
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+$color-1: teal;
+$color-2: gold;
+
+body {
+  margin: 0;
+}
+
+main {
+  padding: 1em;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $color-1;
+  color: $color-2;
+  padding: 1em;
+}
+
+.hamburger {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  cursor: pointer;
+
+  span {
+    display: block;
+    height: 0.3em;
+    background: $color-2;
+
+    & + span {
+      margin-top: 0.6em;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__item {
+    color: $color-2;
+    margin: 0 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: $color-1;
+
+    &--opened {
+      transform: translateY(0);
+    }
+
+    &--opening {
+      transition: transform 0.5s;
+    }
+
+    &__item {
+      font-size: 2em;
+      margin: 0.5em;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
