@@ -32,23 +32,18 @@ $breaks: (
   xl: $break-xl,
 );
 
-.flow {
+.row {
   display: flex;
   flex-wrap: wrap;
   margin-left: -$gutter;
   margin-right: -$gutter;
 
-  & > [class*='cell'] {
+  & > [class*='col'] {
     margin-bottom: 2 * $gutter;
   }
 }
 
-.cell-break {
-  width: 100% !important;
-  margin: 0 !important;
-}
-
-%cell {
+%col {
   width: 100%;
   max-width: 100%;
   flex: 0 0 auto;
@@ -67,8 +62,8 @@ $breaks: (
   @for $i from 0 through 12 {
     $name: col-name($size-name, $i);
 
-    .cell#{$name} {
-      @extend %cell;
+    .col#{$name} {
+      @extend %col;
     }
   }
 
@@ -76,13 +71,13 @@ $breaks: (
     @for $i from 0 through 12 {
       $name: col-name($size-name, $i);
 
-      .cell#{$name} {
+      .col#{$name} {
         @if ($i > 0) {
           flex-basis: percentage($i / 12);
           max-width: percentage($i / 12);
         } @else {
           flex-grow: 1;
-          flex-basis: auto;
+          flex-basis: 0;
           width: auto;
           min-width: 0;
           max-width: 100%;
