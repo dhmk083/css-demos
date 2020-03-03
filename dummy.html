@@ -7,16 +7,18 @@
     <link rel="stylesheet" href="/dist/dummy.css" />
   </head>
   <body id="dummy">
-    <div class="wrap">
+    <div class="header-wrap">
       <header class="header">
-        <div class="logo"></div>
-        <div class="burger"></div>
-        <div class="nav">
-          <div class="nav__item"></div>
-          <div class="nav__item"></div>
-          <div class="nav__item"></div>
-          <div class="nav__item"></div>
-          <div class="nav__item"></div>
+        <div class="header__content">
+          <div class="logo"></div>
+          <div class="burger" id="menu-toggle"></div>
+          <div class="nav" id="menu">
+            <div class="nav__item"></div>
+            <div class="nav__item"></div>
+            <div class="nav__item"></div>
+            <div class="nav__item"></div>
+            <div class="nav__item"></div>
+          </div>
         </div>
       </header>
 
@@ -80,5 +82,21 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      const opening = 'nav--opening'
+      const menu = document.getElementById('menu')
+
+      menu.addEventListener('transitionend', () =>
+        menu.classList.remove(opening)
+      )
+
+      document
+        .getElementById('menu-toggle')
+        .addEventListener('click', function() {
+          menu.classList.toggle('nav--opened')
+          menu.classList.add(opening)
+        })
+    </script>
   </body>
 </html>

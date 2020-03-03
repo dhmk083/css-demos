@@ -8,6 +8,10 @@ $break-md: 768px;
 $break-lg: 992px;
 $break-xl: 1200px;
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: sans-serif;
 }
@@ -31,11 +35,16 @@ html {
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: $color-1;
-  padding: 1em;
+  position: relative;
+  z-index: 0;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $color-1;
+    padding: 1em;
+  }
 }
 
 .logo {
@@ -135,11 +144,40 @@ html {
 
 @media (max-width: $break-md) {
   .nav {
-    display: none;
+    position: absolute;
+    z-index: -1;
+    display: block;
+    left: 0;
+    top: 100%;
+    padding: inherit;
+    background: #e91e63;
+    width: 100%;
+
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+
+    &--opened {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+
+    &--opening {
+      transition: transform 0.8s, opacity 0.8s;
+    }
+
+    &__item + &__item {
+      margin-left: 0;
+      margin-top: 1em;
+    }
   }
 }
 
 @media (min-width: $break-md) {
+  #dummy {
+    padding: 1em;
+  }
+
   .burger {
     display: none;
   }
