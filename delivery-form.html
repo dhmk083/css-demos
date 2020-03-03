@@ -8,49 +8,49 @@
   </head>
   <body>
     <form id="delivery-form">
-      <div class="flow">
-        <div class="cell-12">
+      <div class="row">
+        <div class="col-12">
           <div class="field">
             <input name="description" placeholder="Описание груза" />
           </div>
         </div>
-        <div class="cell-md-6">
+        <div class="col-md-6">
           <div class="field">
             <input type="number" name="weight" placeholder="Вес, кг" />
           </div>
         </div>
-        <div class="cell-md-6">
+        <div class="col-md-6">
           <div class="field">
             <input name="dimensions" placeholder="Габариты, объем м.куб" />
           </div>
         </div>
-        <div class="cell text-center">
+        <div class="col text-center">
           Способ доставки
         </div>
-        <div class="cell-12 field">
+        <div class="col-12 field">
           <div class="flow">
-            <div class="cell-6 offset-3 cell-sm-6 offset-sm-0 cell-md">
+            <div class="col-6 offset-3 col-sm-6 offset-sm-0 col-md">
               <label class="delivery-type">
                 <input type="radio" name="delivery-type" value="truck" />
                 <img src="assets/delivery-form/truck.png" alt="truck" />
                 ЖД и авто<br />(20 дней)
               </label>
             </div>
-            <div class="cell-6 offset-3 cell-sm-6 offset-sm-0 cell-md">
+            <div class="col-6 offset-3 col-sm-6 offset-sm-0 col-md">
               <label class="delivery-type">
                 <input type="radio" name="delivery-type" value="ship" />
                 <img src="assets/delivery-form/ship.png" alt="ship" />
                 Море<br />(30 дней)
               </label>
             </div>
-            <div class="cell-6 offset-3 cell-sm-6 offset-sm-0 cell-md">
+            <div class="col-6 offset-3 col-sm-6 offset-sm-0 col-md">
               <label class="delivery-type">
                 <input type="radio" name="delivery-type" value="plane" />
                 <img src="assets/delivery-form/plane.png" alt="plane" />
                 Авиа<br />(14 дней)
               </label>
             </div>
-            <div class="cell-6 offset-3 cell-sm-6 offset-sm-0 cell-md">
+            <div class="col-6 offset-3 col-sm-6 offset-sm-0 col-md">
               <label class="delivery-type">
                 <input type="radio" name="delivery-type" value="plane-fast" />
                 <img
@@ -62,31 +62,31 @@
             </div>
           </div>
         </div>
-        <div class="cell-md-6 margin-center">
+        <div class="col-md-6 margin-center">
           <div class="field">
             <input name="cost" placeholder="Стоимость в USD" readonly />
           </div>
         </div>
-        <div class="cell-12">
+        <div class="col-12">
           <div class="field">
             <input name="customer-name" placeholder="Ваше имя" />
           </div>
         </div>
-        <div class="cell-md-6">
+        <div class="col-md-6">
           <div class="field">
             <input name="customer-email" placeholder="Ваш email" />
           </div>
         </div>
-        <div class="cell-md-6">
+        <div class="col-md-6">
           <div class="field">
             <input name="customer-phone" placeholder="Ваш телефон" />
           </div>
         </div>
-        <div class="cell-md-8 attachment">
+        <div class="col-md-8 attachment">
           Вы можете приложить документы для более точного рассчета. Инвойс,
           упаковочный лист и т.д.
         </div>
-        <div class="cell-md-4 text-center">
+        <div class="col-md-4 text-center">
           <label>
             <img
               src="assets/delivery-form/upload.png"
@@ -96,7 +96,7 @@
             <input type="file" name="attachment" />
           </label>
         </div>
-        <div class="cell text-center">
+        <div class="col text-center">
           <input type="submit" value="Моментальный расчет" />
         </div>
       </div>
