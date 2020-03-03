@@ -35,7 +35,10 @@ html {
 }
 
 .header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
   z-index: 0;
 
   &__content {
@@ -80,6 +83,7 @@ html {
 }
 
 .main {
+  margin-top: 80px;
   flex: 1;
   background: $color-4;
   padding: 1em;
