@@ -65,6 +65,12 @@ $breaks: (
     .col#{$name} {
       @extend %col;
     }
+
+    @if ($i == 0) {
+      .col#{$name}-auto {
+        @extend %col;
+      }
+    }
   }
 
   @include media-width($size-value) {
@@ -80,6 +86,14 @@ $breaks: (
           flex-basis: 0;
           width: auto;
           min-width: 0;
+          max-width: 100%;
+        }
+      }
+
+      @if ($i == 0) {
+        .col#{$name}-auto {
+          flex: 0 0 auto;
+          width: auto;
           max-width: 100%;
         }
       }
