@@ -8,6 +8,7 @@ $fa-font-path: '../assets/webfonts';
 @import './fa/fontawesome.scss';
 @import './fa/solid.scss';
 @import './fa/brands.scss';
+@import 'grid';
 
 @mixin fa-icon($name, $type) {
   @extend %fa-icon;
@@ -110,12 +111,19 @@ body {
   color: $color-1;
 
   .wrap {
-    @include flex($align: center, $justify: space-between);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-width(null, $break-md) {
+      padding: 1em;
+    }
   }
 }
 
 .brand {
-  @include row;
+  display: flex;
+  align-items: center;
   color: black;
   text-transform: uppercase;
   font-size: 1.5em;
@@ -190,6 +198,34 @@ body {
       border-color: $color-hover;
     }
   }
+
+  @include media-width(null, $break-md) {
+    display: none;
+  }
+}
+
+.nav-toggle {
+  display: none;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
+  border: 1px solid;
+  border-radius: 3px;
+  box-sizing: content-box;
+
+  span {
+    display: block;
+    height: 20%;
+    background: darken($color-1, 20%);
+
+    + span {
+      margin-top: 20%;
+    }
+  }
+
+  @include media-width(null, $break-md) {
+    display: block;
+  }
 }
 
 .promo {
@@ -198,22 +234,17 @@ body {
   padding: 3em 0;
 
   .wrap {
-    @include flex-col($align: center);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__title {
     text-transform: capitalize;
   }
 
-  &__text {
-  }
-
   &__actions {
-    display: flex;
-
-    button {
-      @include col;
-    }
+    text-align: center;
   }
 }
 
@@ -233,10 +264,6 @@ body {
 
 .benefits {
   padding: 3em 0;
-
-  &__list {
-    display: flex;
-  }
 }
 
 .card {
@@ -288,16 +315,24 @@ body {
   border-left: none;
   border-right: none;
 
+  overflow: hidden;
+
   .wrap {
-    display: flex;
+    // display: flex;
+  }
+
+  &__video-container {
+    text-align: center;
   }
 
   &__video {
-    flex: 1;
+    // flex: 1;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   &__content {
-    flex: 1;
+    // flex: 1;
     padding: 0 1em;
     display: flex;
     flex-direction: column;
@@ -311,7 +346,14 @@ body {
     margin-top: 0;
   }
 
-  &__text {
+  @include media-width(0, $break-md) {
+    &__video-container {
+      order: 2;
+    }
+
+    &__title {
+      margin: auto;
+    }
   }
 }
 
@@ -324,7 +366,7 @@ body {
   }
 
   &__list {
-    display: flex;
+    // display: flex;
   }
 }
 
@@ -358,7 +400,7 @@ body {
   color: $color-2;
 
   .wrap {
-    @include flex($align: center, $justify: space-between);
+    // @include flex($align: center, $justify: space-between);
     padding: 1em;
   }
 }
@@ -385,5 +427,9 @@ body {
     background: $color-2;
     border-radius: 5px;
     padding: 0.2em;
+  }
+
+  @include media-width(0, $break-sm) {
+    padding-top: 1em;
   }
 }

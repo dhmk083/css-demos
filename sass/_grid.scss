@@ -38,8 +38,10 @@ $breaks: (
   margin-left: -$gutter;
   margin-right: -$gutter;
 
-  & > [class*='col'] {
-    margin-bottom: 2 * $gutter;
+  &--vgutter {
+    & > [class*='col'] {
+      margin-bottom: 2 * $gutter;
+    }
   }
 }
 

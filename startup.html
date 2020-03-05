@@ -38,6 +38,12 @@
           <div class="nav__item"><a class="nav__link" href="#">Blog</a></div>
           <div class="nav__item"><a class="nav__link" href="#">Contact</a></div>
         </nav>
+
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
 
@@ -47,69 +53,81 @@
         <p class="promo__text">
           Start Up will upgrade your awesomness to twice the level you have now.
         </p>
-        <div class="promo__actions">
-          <button class="button button--primary">Get started</button>
-          <button class="button">Learn more</button>
+        <div class="promo__actions row row--vgutter">
+          <div class="col-md-auto">
+            <button class="button button--primary">Get started</button>
+          </div>
+          <div class="col-md-auto">
+            <button class="button">Learn more</button>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="benefits">
       <div class="wrap">
-        <div class="benefits__list">
-          <div class="card">
-            <div class="card__header">
-              <div class="card__icon fas fa-rocket"></div>
-              <div class="card__title">Takes effect instantly</div>
-            </div>
-            <div class="card__content">
-              You don't want to wait to become more awesome, you want it right
-              now! And that's exactly what you'll get.
-            </div>
-            <div class="card__footer">
-              <a class="card__link" href="#">How it works</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card__header">
-              <div class="card__icon fas fa-users chart-line cogs"></div>
-              <div class="card__title">Works for everyone</div>
-            </div>
-            <div class="card__content">
-              It doesn't matter how awesome you are already, the increase you
-              get will take you up to maximum potential.
-            </div>
-            <div class="card__footer">
-              <a class="card__link" href="#">How you're covered</a>
+        <div class="benefits__list row row--vgutter">
+          <div class="col-md-6 col-lg">
+            <div class="card">
+              <div class="card__header">
+                <div class="card__icon fas fa-rocket"></div>
+                <div class="card__title">Takes effect instantly</div>
+              </div>
+              <div class="card__content">
+                You don't want to wait to become more awesome, you want it right
+                now! And that's exactly what you'll get.
+              </div>
+              <div class="card__footer">
+                <a class="card__link" href="#">How it works</a>
+              </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card__header">
-              <div class="card__icon fas fa-chart-line"></div>
-              <div class="card__title">Permanent upgrade</div>
-            </div>
-            <div class="card__content">
-              There is no expiry date on your new awesomeness upgrade. It will
-              stay active from the moment you get it, forever.
-            </div>
-            <div class="card__footer">
-              <a class="card__link" href="#">Lifetime awesomness</a>
+          <div class="col-md-6 col-lg">
+            <div class="card">
+              <div class="card__header">
+                <div class="card__icon fas fa-users chart-line cogs"></div>
+                <div class="card__title">Works for everyone</div>
+              </div>
+              <div class="card__content">
+                It doesn't matter how awesome you are already, the increase you
+                get will take you up to maximum potential.
+              </div>
+              <div class="card__footer">
+                <a class="card__link" href="#">How you're covered</a>
+              </div>
             </div>
           </div>
 
-          <div class="card">
-            <div class="card__header">
-              <div class="card__icon fas fa-cogs"></div>
-              <div class="card__title">Proven formula</div>
+          <div class="col-md-6 col-lg">
+            <div class="card">
+              <div class="card__header">
+                <div class="card__icon fas fa-chart-line"></div>
+                <div class="card__title">Permanent upgrade</div>
+              </div>
+              <div class="card__content">
+                There is no expiry date on your new awesomeness upgrade. It will
+                stay active from the moment you get it, forever.
+              </div>
+              <div class="card__footer">
+                <a class="card__link" href="#">Lifetime awesomness</a>
+              </div>
             </div>
-            <div class="card__content">
-              80,000 people have already upgraded their awesomness. Our track
-              record makes us trusted worldwide.
-            </div>
-            <div class="card__footer">
-              <a class="card__link" href="#">Method for success</a>
+          </div>
+
+          <div class="col-md-6 col-lg">
+            <div class="card">
+              <div class="card__header">
+                <div class="card__icon fas fa-cogs"></div>
+                <div class="card__title">Proven formula</div>
+              </div>
+              <div class="card__content">
+                80,000 people have already upgraded their awesomness. Our track
+                record makes us trusted worldwide.
+              </div>
+              <div class="card__footer">
+                <a class="card__link" href="#">Method for success</a>
+              </div>
             </div>
           </div>
         </div>
@@ -117,26 +135,30 @@
     </section>
 
     <section class="welcome">
-      <div class="wrap">
-        <iframe
-          class="welcome__video"
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/9LDh8DefWpI"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <div class="welcome__content">
-          <h2 class="welcome__title">Welcome to start up</h2>
-          <p class="welcome__text">
-            Social entrepreneurship youth silo correlation families or, boots on
-            the ground theory of change scale and impact compassion theory of
-            change then. Global, benefit corporation innovate impact, living a
-            fully ethical life milestones inspirational collaborate social
-            innovation scalable. Impact milestones, shared unit of analysis
-            inclusion save the world.
-          </p>
+      <div class="wrap row row--vgutter">
+        <div class="col-md welcome__video-container">
+          <iframe
+            width="560"
+            height="315"
+            class="welcome__video"
+            src="https://www.youtube.com/embed/9LDh8DefWpI"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="col-md">
+          <div class="welcome__content">
+            <h2 class="welcome__title">Welcome to start up</h2>
+            <p class="welcome__text">
+              Social entrepreneurship youth silo correlation families or, boots
+              on the ground theory of change scale and impact compassion theory
+              of change then. Global, benefit corporation innovate impact,
+              living a fully ethical life milestones inspirational collaborate
+              social innovation scalable. Impact milestones, shared unit of
+              analysis inclusion save the world.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -144,49 +166,60 @@
     <section class="reviews">
       <div class="wrap">
         <h2 class="reviews__title">What people are saying</h2>
-        <div class="reviews__list">
-          <div class="review">
-            <div class="review__text">
-              Inclusive thought leadership then replicable external partners NGO
-              or expose the truth then thought leadership thought leadership.
+        <div class="reviews__list row row--vgutter">
+          <div class="col-sm-12 col-md-6 col-lg">
+            <div class="review">
+              <div class="review__text">
+                Inclusive thought leadership then replicable external partners
+                NGO or expose the truth then thought leadership thought
+                leadership.
+              </div>
+              <div class="review__author">A Girl</div>
             </div>
-            <div class="review__author">A Girl</div>
           </div>
 
-          <div class="review">
-            <div class="review__text">
-              Social intrapreneurship strengthening infrastructure black lives
-              matter optimism human-centered think tank then segmentation.
+          <div class="col-sm-12 col-md-6 col-lg">
+            <div class="review">
+              <div class="review__text">
+                Social intrapreneurship strengthening infrastructure black lives
+                matter optimism human-centered think tank then segmentation.
+              </div>
+              <div class="review__author">A Dinosaur</div>
             </div>
-            <div class="review__author">A Dinosaur</div>
           </div>
 
-          <div class="review">
-            <div class="review__text">
-              Relief social entrepreneurship; venture philanthropy triple bottom
-              line energize.
+          <div class="col-sm-12 col-md-6 col-lg">
+            <div class="review">
+              <div class="review__text">
+                Relief social entrepreneurship; venture philanthropy triple
+                bottom line energize.
+              </div>
+              <div class="review__author">One of the Magazines</div>
             </div>
-            <div class="review__author">One of the Magazines</div>
           </div>
 
-          <div class="review">
-            <div class="review__text">
-              Dynamic rubric progress sustainable we must stand up; we must
-              stand up commitment social entrepreneur shared value indicators a
-              our work.
+          <div class="col-sm-12 col-md-6 col-lg">
+            <div class="review">
+              <div class="review__text">
+                Dynamic rubric progress sustainable we must stand up; we must
+                stand up commitment social entrepreneur shared value indicators
+                a our work.
+              </div>
+              <div class="review__author">Some other Magazine</div>
             </div>
-            <div class="review__author">Some other Magazine</div>
           </div>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="wrap">
-        <div class="copy">
-          &copy; 2020 StartUp. All Rights Reserved
+      <div class="wrap row">
+        <div class="col-sm">
+          <div class="copy">
+            &copy; 2020 StartUp. All Rights Reserved
+          </div>
         </div>
-        <div class="media">
+        <div class="col-auto media">
           <div class="icon twitter"></div>
           <div class="icon facebook"></div>
           <div class="icon google-plus"></div>
