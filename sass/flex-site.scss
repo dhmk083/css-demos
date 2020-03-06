@@ -1,0 +1,357 @@
+$color-1: #445162;
+$color-2: #f5f5f5;
+$color-3: white;
+
+$break-sm: 576px;
+$break-md: 930px; // 768px;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.title {
+  color: $color-1;
+  font-size: 2em;
+}
+
+.content {
+  flex: auto;
+}
+
+.header {
+  background: $color-1;
+  padding: 2em 0;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__body {
+    color: $color-2;
+    padding-right: 2em;
+  }
+
+  &__title {
+    font-size: 4em;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: 2em;
+    color: greenyellow;
+    font-style: italic;
+    font-size: 0.9em;
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+
+    li {
+      background: url('/assets/flex-site/check.svg') left / 1em no-repeat;
+      padding-left: 2em;
+      margin-bottom: 0.5em;
+    }
+  }
+
+  &__image {
+    text-align: center;
+    width: 300px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  @media (max-width: 630px) {
+    padding-bottom: 0;
+
+    .container {
+      padding: 0;
+    }
+
+    &__body {
+      padding: 0 1em;
+      margin-bottom: 1em;
+    }
+
+    &__image {
+      width: 100%;
+
+      img {
+        width: 100%; // ie
+      }
+    }
+  }
+}
+
+.about {
+  background: $color-3;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 0;
+  }
+
+  &__image {
+    flex: 0 0 45%;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__body {
+    flex: 1 1 0%;
+    padding-left: 2em;
+  }
+
+  &__title {
+    margin-bottom: 1em;
+  }
+
+  &__text {
+    p {
+      line-height: 1.5em;
+      margin-bottom: 1em;
+    }
+  }
+
+  @media (max-width: $break-md) {
+    &__row {
+      justify-content: center;
+    }
+
+    &__image {
+      flex-grow: 1;
+    }
+
+    &__body {
+      flex-basis: auto;
+      padding-left: 0;
+    }
+
+    &__title {
+      text-align: center;
+      margin: 0.5em 0;
+    }
+  }
+}
+
+.cards-1 {
+  background: $color-2;
+
+  &__title {
+    text-align: center;
+    padding: 2em 0;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5em;
+  }
+
+  &__column {
+    flex: 0 1 50%;
+    max-width: 50%; // ie hack for padding to work (it doesn't respect border-box)
+    padding: 0 0.5em;
+    margin-bottom: 2em;
+  }
+
+  @media (max-width: $break-sm) {
+    &__title {
+      padding: 1em 0;
+    }
+
+    &__column {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.card-1 {
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    flex: 0 0 200px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &__body {
+    flex: 1 1 0%;
+    padding-left: 1em;
+  }
+
+  &__title {
+    color: $color-1;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  @media (max-width: $break-md) {
+    &__row {
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__body {
+      flex-basis: auto;
+      padding-left: 0;
+      padding-top: 1em;
+    }
+  }
+}
+
+.cards-2 {
+  background: $color-3;
+
+  &__title {
+    text-align: center;
+    padding: 2em 0;
+  }
+
+  &__body {
+    padding: 0 3em;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -1em;
+  }
+
+  &__column {
+    flex: 0 1 (100% / 3);
+    max-width: (100% / 3); // ie (although it somehow works without it)
+    padding: 0 1em;
+    margin-bottom: 2em;
+    display: flex;
+  }
+
+  @media (max-width: $break-md) {
+    &__row {
+      justify-content: center;
+    }
+
+    &__column {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: $break-sm) {
+    padding-bottom: 0;
+
+    &__title {
+      padding: 1em 0;
+    }
+
+    &__body {
+      padding: 0;
+    }
+
+    &__column {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.card-2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: $color-1;
+  color: $color-3;
+  border-radius: 5px;
+  border: 1px solid $color-1;
+
+  &__title {
+    font-size: 2em;
+    padding: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    background: $color-2;
+    color: $color-1;
+    font-size: 1.5em;
+    padding: 0.5em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    flex: auto;
+    padding: 1em;
+
+    p {
+      margin-bottom: 1em;
+      line-height: 1.2em;
+    }
+  }
+
+  &__action {
+    display: block;
+    margin: 1em;
+    padding: 1em;
+    background: $color-2;
+    color: green;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.2em;
+  }
+}
+
+.footer {
+  background: $color-2;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 65px;
+  }
+
+  &__text {
+    color: $color-1;
+    letter-spacing: 0.1em;
+  }
+}
